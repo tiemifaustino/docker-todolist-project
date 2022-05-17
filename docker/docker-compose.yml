@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+
+  todotests:
+    container_name: tests-container
+    image: todotests
+    restart: always
+    depends_on:
+      - todofront
+      - todoback
+    environment:
+      FRONT_HOST: frontend-container
+      FRONT_PORT: 3000
+    networks:
+      - front-network
+
+  todofront:
+    container_name: frontend-container
+    image: todofrontend
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - todoback
+    environment:
+      REACT_APP_API_HOST: backend-container
+      REACT_APP_API_PORT: 3001
+    networks:
+      - front-network
+      - back-network
+
+  todoback:
+    container_name: backend-container
+    image: todobackend
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - back-network
+
+networks:
+  front-network: {}
+  back-network: {}
