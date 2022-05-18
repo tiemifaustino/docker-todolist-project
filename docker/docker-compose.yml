@@ -8,10 +8,7 @@ services:
       - "todofront"
       - "todoback"
     environment:
-      FRONT_HOST: todofront
-      FRONT_PORT: 3000
-    networks:
-      - front-network
+      - FRONT_HOST=todofront
 
   todofront:
     image: todofrontend
@@ -20,19 +17,9 @@ services:
     depends_on:
       - "todoback"
     environment:
-      REACT_APP_API_HOST: todoback
-      REACT_APP_API_PORT: 3001
-    networks:
-      - front-network
-      - back-network
-
+      - REACT_APP_API_HOST=todoback
+      
   todoback:
     image: todobackend
     ports:
       - 3001:3001
-    networks:
-      - back-network
-
-networks:
-  front-network: {}
-  back-network: {}
