@@ -1,5 +1,5 @@
 
-# Projeto Docker Todo List
+# Projeto Docker Todo List 🐳
 
 
 Projeto realizado no módulo de Back-end durante o curso de Desenvolvimento Web pela [Trybe](https://www.betrybe.com/), a escola que te ensina a programar, a aprender e a trabalhar.
