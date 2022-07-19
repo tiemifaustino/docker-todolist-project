@@ -43,10 +43,17 @@ Para essa aplicação fornecida funcionar, foi desenvolvido os arquivos de confi
 
 ## Instalando Dependências
 
-1. Clone o repositório
-* `git clone git@github.com:tiemifaustino/docker-todolist-project.git`
-* Entre na pasta do repositório que você acabou de clonar:
-  * `cd docker-todolist-project`
+### 1. Clone o repositório
+```
+git clone git@github.com:tiemifaustino/docker-todolist-project.git
+```
 
-2. Instale as dependências:
-  * `npm install`
+* Entre na pasta do repositório que você acabou de clonar:
+```
+cd docker-todolist-project
+```
+
+### 2. Instale as dependências:
+```
+npm install
+```
